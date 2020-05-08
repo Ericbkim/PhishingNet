@@ -1,0 +1,29 @@
+{% extends "home/base.html" %}
+{% block content %}
+<div class="container">
+    <div class = "row">
+        <h1>Are these posts related to yours?</h1>
+    </div>
+    <div class = "row">
+      {% for post in posts %}
+        <div class = "col-md-3 d-flex align-items-stretch">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top img-fluid" src=../media/{{ post.image }} alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text">
+                        {% for tag in post.tags.all %}
+                        {{ tag }}
+                        {% endfor %}
+                    </p>
+                    <a href='/post/{{ post.postId }}' class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+      {% endfor %}  
+    </div>
+    <div class = "row">
+        <button class="btn btn-outline-info" type="submit">Post</button>
+    </div>       
+</div>
+{% endblock content %}

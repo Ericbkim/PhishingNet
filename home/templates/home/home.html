@@ -1,0 +1,87 @@
+{% extends "home/base.html" %}
+{% block content %}
+
+<h2 style="text-align:center;">
+    <p class="card-text">
+        Welcome to Phishing Net!
+    </p>
+</h2>
+<p  style="text-align:center;width:50%;margin:auto;margin-bottom:5%;">
+    The innovative, crowd-sourced phishing email detection tool. 
+    PhishingNet is a website where you post suspicious emails and get feedback! You'll upload
+     a screen shot of a potential phishing email. Then PhishingNet will assign the post to 
+     subject matter experts depending on what type of email you uploaded. Then the experts 
+     will vote and comment on whether they think your email is phishing or not.
+</p>
+
+<div style="text-align:center;margin-bottom:2.5%;">
+<img src="../../media/logo.png" alt="Logo" height="150">
+</div>
+
+<!-- Feel free to change descriptions -->
+<h2 style="text-align:center;">
+    How to get started
+</h2>
+<p  style="text-align:center;width:50%;margin:auto;margin-bottom:5%;">
+    Click on upload and upload a screenshot of the email and check back in a few hours!
+    You can also click on assigned to vote and comment on posts made by your peers.
+</p>
+<!--
+<div class="row">
+<div class="card">
+<div class="card-body" style="float:left;width:400px;">
+    <a class="card-title" style="display:inline;" href="{% url 'phish-assigned' %}">Assigned</a>
+    <p class="card-text" style="display:inline;">
+        Click here to view posts made by others and use your expertise to help the community!
+    </p>
+</div>
+</div>
+<div class="card">
+<div class="card-body" style="float:right;margin-right:100px;width:400px;">
+    <a class="nav-item nav-link" href="{% url 'phish-created' %}">Created</a>
+    <p class="card-text" style="display:center;">
+        Click here to upload a new post and receive feedback from the experts!
+    </p>
+</div>
+</div>
+</div>
+-->
+
+<div class="card-deck" style="margin-bottom: 10%;">
+
+    <div class="card">
+        <div class="card-body" >
+        <h4>
+        <a class="nav-item nav-link" style="text-align:center;color:inherit;font-weight:bold;" href="{% url 'phish-assigned' %}">Assigned</a>
+        </h4>
+        <p class="card-text" style="text-align:center;">  Click here to view posts made by others and use your expertise to help the community!</p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-body" >
+        <h4>
+            <a class="nav-item nav-link" style="text-align:center;color:inherit;font-weight:bold" href="{% url 'phish-created' %}">Created</a>
+        </h4>
+            <p class="card-text" style="text-align:center;">Click here to view what others are saying about posts you made!</p>
+        </div>
+    </div>
+    
+    <div class="card">
+          <div class="card-body" >
+          <h4>
+              <a class="nav-item nav-link" style="text-align:center;color:inherit;font-weight:bold" href="{% url 'phish-upload' %}">Upload</a>
+        </h4>
+              <p class="card-text" style="text-align:center;">Click here to upload a new post and receive feedback from the experts!</p>
+          </div>
+    </div>
+
+<!-- add readMe on home page here -->
+<!-- 
+    Welcome to Phishing Net! The innovative, crowd-sourced phishing email detection tool. 
+     The idea of the tool
+        Uploading posts
+        Voting and commenting on posts
+-->
+
+{% endblock content %}

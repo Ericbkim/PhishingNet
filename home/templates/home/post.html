@@ -1,0 +1,25 @@
+{% extends "home/base.html" %}
+{% block content %}
+<div class="container">
+    <div class = "row">
+        <div class = "col-md-6 d-flex align-items-stretch">
+            <div class="card flex-fill" style="width: 18rem;">
+                <h4 class="card-user">Post made by {{ post.userId.user }}</h4>
+                <img class="card-img-top img-flex" src=../../media/{{ post.image }} alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text">
+                        {% for tag in post.tags.all %}
+                        {{ tag }}
+                        {% endfor %}
+                    </p>
+                </div>
+            </div>
+        </div>  
+    </div>       
+</div>
+<main role="main" class="container">
+    {% block extra %}{% endblock %}
+</main>
+
+{% endblock content %}
